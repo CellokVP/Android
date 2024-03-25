@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List ;
 
 import fr.gsb.rv.entites.Cadeau;
+import fr.gsb.rv.entites.Medicament;
 import fr.gsb.rv.entites.Praticiens;
 import fr.gsb.rv.entites.Visiteur;
 
@@ -16,6 +17,7 @@ public class ModeleGSB {
     private List<Praticiens> lesPraticiens = new ArrayList<Praticiens>() ;
 
     private List<Cadeau> lesQuantites = new ArrayList<Cadeau>();
+    private List<Medicament> lesMedicaments = new ArrayList<Medicament>() ;
 
     private ModeleGSB(){
         super() ;
@@ -44,6 +46,11 @@ public class ModeleGSB {
         this.lesPraticiens.add( new Praticiens(4, "Fert", "Timothée", "15696 rue", 93000, "Paris", 4)) ;
 
         this.lesQuantites.add(new Cadeau(1)) ;
+
+        this.lesMedicaments.add(new Medicament("Aspirine"));
+        this.lesMedicaments.add(new Medicament("spasfond"));
+        this.lesMedicaments.add(new Medicament("eferalgan"));
+
     }
 
     public Visiteur seConnecter(String matricule, String mdp){
@@ -57,7 +64,7 @@ public class ModeleGSB {
         return null ;
 
     }
-
+/*
     public List<Praticiens> listPraticiens(){
         ArrayList<Praticiens> listePraticien = new ArrayList<>();
         for (int i = 0 ; i < this.lesPraticiens.size() ; i++ ){
@@ -65,15 +72,27 @@ public class ModeleGSB {
         }
         return listePraticien ;
     }
+*/
+    public List<Praticiens> getLesPraticiens() {
+        return lesPraticiens;
+    }
 
-    public ArrayList<Cadeau> getLesEchantillons( Integer ){
-
+    /*
+    public ArrayList<Cadeau> getLesEchantillons(  ){
+        ArrayList<Cadeau> listeEchantillons = new ArrayList<>();
+        for (int i = 0 ; i < this.lesQuantites.size() ; i++ ){
+            listeEchantillons.add(lesQuantites.get(i)) ;
+        }
+        return listeEchantillons ;
     }
 
     public Object getLesEchantillons(Integer posEchantillons) {
+
     }
 
     public static int getQte() {
 
     }
+
+     */
 }
